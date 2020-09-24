@@ -79,13 +79,17 @@ public class EarthquakeCityMap extends PApplet {
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
 	    
-	    
+	    /*
 	    for (int i=0;i<earthquakes.size();i++) {
 	    	SimplePointMarker createMarker = new SimplePointMarker(earthquakes.get(i).getLocation());
 	    	markers.add(createMarker);
 	    }
+	    */
 	    
-
+	    for (int i=0;i<earthquakes.size();i++) {
+	    	markers.add(i, createMarker(earthquakes.get(i)));
+	    }
+	    
 	    
 	    
 	    // Add the markers to the map so that they are displayed
