@@ -149,7 +149,8 @@ public class EarthquakeCityMap extends PApplet {
 	}
 	
 	public void draw() {
-	    background(10);
+	    int col = color(0,0,0);
+		background(col);
 	    map.draw();
 	    addKey();
 	}
@@ -160,6 +161,34 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() 
 	{	
 		// Remember you can use Processing's graphics methods here
-	
+		fill(color(200,200,200));  //color for the key panel
+		rect(5,50,190,300,5,5,5,5);	//draw the key panel 
+		
+		//sets the title's size and color
+		textSize(20); 
+		fill(0,0,0);
+		text("Earthquake Key",15,75);
+		
+		//sets the ellipses sizes and colors
+		fill(255,0,0); 
+		ellipse(15, 125, 15, 15);
+		
+		fill(255,255,0); 
+		ellipse(15, 175, 11, 11);
+		
+		fill(0,0,255); 
+		ellipse(15, 225, 6, 6);
+		
+		
+		//converts the thresholds from float to string
+		String thre_moderate = Float.toString(THRESHOLD_MODERATE);
+		String thre_light = Float.toString(THRESHOLD_LIGHT);
+		
+		//sets the information text size and color
+		textSize(14); 
+		fill(0,0,0);
+		text(thre_moderate+" < magnitude",29,130);
+		text(thre_light+" < magnitude < "+thre_moderate,29,180);
+		text("magnitude < "+thre_light,29,230);
 	}
 }
